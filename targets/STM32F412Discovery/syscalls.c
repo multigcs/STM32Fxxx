@@ -26,8 +26,8 @@ extern int errno;
 #endif /* __GNUC__ */
 
 PUTCHAR_PROTOTYPE {
-	USART_SendData(USART3, (uint8_t) ch);
-	while (USART_GetFlagStatus(USART3, USART_FLAG_TC) == RESET) {}
+	USART_SendData(USART2, (uint8_t) ch);
+	while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET) {}
 	return ch;
 }
 
@@ -231,10 +231,18 @@ int _write(int file, char *ptr, int len) {
 	int n;
 	switch (file) {
 		case STDOUT_FILENO: /*stdout*/
-			VCP_SendData(&USB_OTG_dev, ptr, len);
+			for (n = 0; n < len; n++) {
+				USART_SendData(USART2, ptr[n]);
+				while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET) {}
+			}
+//			VCP_SendData(&USB_OTG_dev, ptr, len);
 			break;
 		case STDERR_FILENO: /* stderr */
-			VCP_SendData(&USB_OTG_dev, ptr, len);
+			for (n = 0; n < len; n++) {
+				USART_SendData(USART2, ptr[n]);
+				while (USART_GetFlagStatus(USART2, USART_FLAG_TC) == RESET) {}
+			}
+//			VCP_SendData(&USB_OTG_dev, ptr, len);
 			break;
 		default:
 			errno = EBADF;

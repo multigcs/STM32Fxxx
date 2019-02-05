@@ -8,7 +8,7 @@
 
 #define LED_CLK		RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE)
 #define LED_PORT	GPIOE
-#define LED_PIN		GPIO_Pin_3
+#define LED_PIN		GPIO_Pin_2
 
 #define I2C_SPEED 50000
 #define SSD1306ADDR 0x3C
