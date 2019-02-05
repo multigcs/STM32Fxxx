@@ -2,6 +2,16 @@
 
 #include "usb_bsp.h"
 
+/*
+
+	OTG_FS_SOF = PA8
+	OTG_FS_VBUS = PA9
+	OTG_FS_ID = PA10
+	OTG_FS_DM = PA11
+	OTG_FS_DP = PA12
+
+*/
+
 
 void delay(uint32_t delay);
 
@@ -27,7 +37,7 @@ void USB_OTG_BSP_Init(USB_OTG_CORE_HANDLE *pdev) {
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);    
 
-	GPIO_PinAFConfig(GPIOA,GPIO_PinSource9,GPIO_AF_OTG1_FS) ; 
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource9, GPIO_AF_OTG1_FS) ; 
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource11, GPIO_AF_OTG1_FS); 
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource12, GPIO_AF_OTG1_FS);
 
