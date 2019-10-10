@@ -1,6 +1,5 @@
 
-#TARGET           := HY-TinySTM103T
-TARGET           := Fez-Cerb40
+TARGET           := BluePill
 NAME             := blink
 
 
@@ -11,8 +10,10 @@ INCLUDE += -Isrc/timer
 
 SRC += src/main.c
 SRC += src/ssd1306/ssd1306.c
+
 SRC += src/ssd1351/ssd1351.c
 SRC += src/framebuffer/framebuffer.c
+
 SRC += src/timer/timer.c
 
 

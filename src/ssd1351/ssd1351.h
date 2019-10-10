@@ -11,4 +11,4 @@
 
 
 void ssd1351Init(void);
-
+void ssd1351Update(void);

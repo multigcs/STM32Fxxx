@@ -2,6 +2,7 @@
 BUILDDIR         := build/$(TARGET)
 OPTLVL           := s
 TOOLCHAIN_PREFIX := /opt/gcc-arm-none-eabi-8-2018-q4-major/bin/arm-none-eabi
+TOOLCHAIN_PREFIX := /opt/gcc-arm-none-eabi-7-2017-q4-major/bin/arm-none-eabi
 OPENOCDCFG        = /usr/share/openocd/scripts/board/stm32f429discovery.cfg
 AS                = $(TOOLCHAIN_PREFIX)-as
 AR                = $(TOOLCHAIN_PREFIX)-ar
