@@ -109,7 +109,7 @@ $(BUILDDIR)/%.o: %.s
 
 flash: $(BUILDDIR)/$(NAME).bin
 	#stm32flash -w $(BUILDDIR)/$(NAME).bin -v -b 115200 -g 0x0 /dev/ttyUSB0
-	stm32flash -w $(BUILDDIR)/$(NAME).bin -v -b 1000000 -g 0x0 /dev/ttyUSB0
+	stm32flash -w $(BUILDDIR)/$(NAME).bin -v -b 500000 -g 0x0 /dev/ttyUSB0
 
 st-flash: $(BUILDDIR)/$(NAME).bin
 	st-flash write $(BUILDDIR)/$(NAME).bin 0x8000000

@@ -1,7 +1,13 @@
 
-
+#define fb_COLOR_FG 255
+#define fb_COLOR_BG 0
+#define fb_TEXT_WIDTH 8
+#define fb_TEXT_HEIGHT 16
+#define fb_TEXT_STEP 16
+#define fb_TEXT_FONT fbFont8x16
 #define DISPLAY_WIDTH  128
 #define DISPLAY_HEIGHT 128
+
 extern uint8_t fb1Bit[DISPLAY_WIDTH / 8 * DISPLAY_HEIGHT];
 
 uint8_t fbCharWidth(char ch);
